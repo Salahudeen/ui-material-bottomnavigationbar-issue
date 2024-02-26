@@ -1,0 +1,34 @@
+<GridLayout rows="*, auto">
+  <StackLayout
+    class="page"
+    [ngSwitch]="bottomNavigationBar.selectedTabIndex"
+    row="0"
+  >
+    <ns-first-tab *ngSwitchDefault></ns-first-tab>
+    <ns-second-tab *ngSwitchCase="1"></ns-second-tab>
+    <ns-third-tab *ngSwitchCase="2"></ns-third-tab>
+  </StackLayout>
+
+  <BottomNavigationBar
+    #bottomNavigationBar
+    row="1"
+    class="custom-bottom-navigation-bar"
+    (loaded)="onbottomNavigationBarLoaded()"
+    (tabPressed)="onBottomNavigationTabPressed($event)"
+    (tabSelected)="onBottomNavigationTabSelected($event)"
+    (tabReselected)="onBottomNavigationTabReselected($event)"
+  >
+    <BottomNavigationTab
+      title="Home"
+      [icon]="homeIcon"
+    ></BottomNavigationTab>
+    <BottomNavigationTab
+      title="Search"
+      [icon]="searchIcon"
+    ></BottomNavigationTab>
+    <BottomNavigationTab
+      title="Browse"
+      [icon]="browseIcon"
+    ></BottomNavigationTab>
+  </BottomNavigationBar>
+</GridLayout>
