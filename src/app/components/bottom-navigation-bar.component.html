@@ -1,4 +1,5 @@
 <GridLayout rows="*, auto">
+  
   <StackLayout
     class="page"
     [ngSwitch]="bottomNavigationBar.selectedTabIndex"
@@ -7,6 +8,11 @@
     <page-router-outlet *ngSwitchDefault name="homeTab"></page-router-outlet>
     <page-router-outlet *ngSwitchCase="1" name="searchTab"></page-router-outlet>
     <page-router-outlet *ngSwitchCase="2" name="browseTab"></page-router-outlet>
+  </StackLayout>
+
+  <!-- The below code works fine with component navs, 
+    but not the above with router outlets -->
+    
   <!-- <StackLayout
     class="page"
     [ngSwitch]="bottomNavigationBar.selectedTabIndex"
@@ -16,7 +22,6 @@
     <ns-second-tab *ngSwitchCase="1"></ns-second-tab>
     <ns-third-tab *ngSwitchCase="2"></ns-third-tab>
   </StackLayout> -->
-  </StackLayout>
   
   <BottomNavigationBar
     #bottomNavigationBar
