@@ -4,11 +4,20 @@
     [ngSwitch]="bottomNavigationBar.selectedTabIndex"
     row="0"
   >
+    <page-router-outlet *ngSwitchDefault name="homeTab"></page-router-outlet>
+    <page-router-outlet *ngSwitchCase="1" name="searchTab"></page-router-outlet>
+    <page-router-outlet *ngSwitchCase="2" name="browseTab"></page-router-outlet>
+  <!-- <StackLayout
+    class="page"
+    [ngSwitch]="bottomNavigationBar.selectedTabIndex"
+    row="0"
+  >
     <ns-first-tab *ngSwitchDefault></ns-first-tab>
     <ns-second-tab *ngSwitchCase="1"></ns-second-tab>
     <ns-third-tab *ngSwitchCase="2"></ns-third-tab>
+  </StackLayout> -->
   </StackLayout>
-
+  
   <BottomNavigationBar
     #bottomNavigationBar
     row="1"
